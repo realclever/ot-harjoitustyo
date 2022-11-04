@@ -1,0 +1,109 @@
+    changes
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 120dc4f34daa7cd2457ec08d6a2fb994f912a085
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Fri Nov 4 03:16:35 2022 +0200
+
+    new files
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8db73f76c80f672bbf78500103ef9bdee3d82e2f
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Fri Nov 4 03:12:19 2022 +0200
+
+    changes
+
+ eka.txt    | 2 ++
+ kolmas.txt | 2 ++
+ 2 files changed, 4 insertions(+)
+
+commit 676795614a0622812a9a9e35eda8c63b0ca494f1
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:25:07 2022 +0200
+
+    changes
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 39139d8d2e6c8e8d7d8989ea5c500f1afaae008d
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:24:33 2022 +0200
+
+    changes
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 26efb1fb23a611dce4a801493248887b41db671e
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:23:05 2022 +0200
+
+    changes
+
+ tiedosto.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 2c199599830a6dd99e956f1c231346d847aa0e62
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:22:18 2022 +0200
+
+    changes
+
+ tiedosto.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit f3a33b27b01da0fbfc9f176dd6ec292915aa75da
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:15:42 2022 +0200
+
+    changes
+
+ stuff/stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 85dbc33b611b27bfcf397208c3f824e1454870a8
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:14:45 2022 +0200
+
+    changes
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit c9fe624c04137f60ce5815c84b1bf84f4d31cf98
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 18:13:47 2022 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bee65676e86d2f7726081a33d910cdc1a6f653fd
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 17:56:41 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 794b56e6a695b054949de211673540a49e5f6b76
+Author: Matti Lavikainen <matti.lavikainen@helsinki.fi>
+Date:   Thu Nov 3 17:55:14 2022 +0200
+
+    Tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
