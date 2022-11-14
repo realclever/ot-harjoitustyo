@@ -6,7 +6,7 @@
 
 [komentorivi.txt](https://github.com/realclever/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
-## Viikko 2
+## Dokumentaatio
 
-[Vaatimusmäärittely.txt](linkki)
+[Vaatimusmäärittely](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
