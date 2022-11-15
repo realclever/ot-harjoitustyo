@@ -9,4 +9,4 @@
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
-
+[Työaikakirjanpito](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
