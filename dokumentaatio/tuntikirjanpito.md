@@ -8,4 +8,8 @@
 | 19.11. | 2    | laskimen ulkomuodon luonti |
 | 20.11. | 1    | laskimen ulkomuodon parantelu |
 | 21.11. | 1    | tutustuminen tkinterin testaukseen |
-| yht   | 8   | | 
+| 25.11. | 2.5  | tkinterin dokumentaation/luentomateriaalin tutkimista |
+| 25.11. | 1    | numeronäppäimien luonti |
+| 26.11. | 1    | laskimen ulkomuodon parantelua |
+| 27.11. | 1.5  | muiden näppäimien luonti |
+| yht   | 14   | | 
