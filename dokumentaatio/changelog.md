@@ -10,3 +10,12 @@
 - Numeronäppäimet toteutettu
 - Muut näppäimet toteutettu
 - Numeronäppäimien toiminta toteutettu
+
+## Viikko 5
+
+- Muiden näppäimien toiminnot toteutettu
+- Testikattavuutta nostettu
+- Neliöjuuri näppäin lisätty
+- Yleisimpiä bugeja korjattu 
+
+
