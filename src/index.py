@@ -1,10 +1,10 @@
-from tkinter import *
 from ui.ui import UI
 
 
-class main():
+class Main():
     calculator = UI()
     calculator.start()
 
+
 if __name__ == "__main__":
-    main()
+    Main()

@@ -19,5 +19,6 @@
 | 03.12. | 0.5  | näppäimen loogikan toteutusta |
 | 04.12. | 1  | pythonin dokumentaation opiskelua |
 | 05.12. | 1  | koodin refactorointia |
+| 06.12. | 1  | koodin refactorointia |
 
-| yht   | 22.5   | | 
+| yht   | 23.5   | | 
