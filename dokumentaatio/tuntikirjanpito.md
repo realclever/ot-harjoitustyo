@@ -21,5 +21,5 @@
 | 05.12. | 1    | koodin refactorointia |
 | 06.12. | 1    | koodin refactorointia |
 |        | 1.5  | bugien korjausta ja refactorointia |
-
-| yht    | 25   | | 
+|        | 0.5  | arkkitehtuurikuvaus |
+| yht    | 25.5 | | 
