@@ -9,16 +9,17 @@
 | 20.11. | 1    | laskimen ulkomuodon parantelu |
 | 21.11. | 1    | tutustuminen tkinterin testaukseen |
 | 25.11. | 2.5  | tkinterin dokumentaation/luentomateriaalin tutkimista |
-| 25.11. | 1    | numeronäppäimien luonti |
+|        | 1    | numeronäppäimien luonti |
 | 26.11. | 1    | laskimen ulkomuodon parantelua |
 | 27.11. | 1.5  | muiden näppäimien luonti |
 | 30.11. | 2.5  | näppäimien loogikan toteutusta |
-| 02.12. | 2  | näppäimien loogikan toteutusta |
-| 03.12. | 1  | testien lisäämistä |
-| 03.11. | 0.5  | uuden näppäimen luonti |
-| 03.12. | 0.5  | näppäimen loogikan toteutusta |
-| 04.12. | 1  | pythonin dokumentaation opiskelua |
-| 05.12. | 1  | koodin refactorointia |
-| 06.12. | 1  | koodin refactorointia |
+| 02.12. | 2    | näppäimien loogikan toteutusta |
+| 03.12. | 1    | testien lisäämistä |
+|        | 0.5  | uuden näppäimen luonti |
+|        | 0.5  | näppäimen loogikan toteutusta |
+| 04.12. | 1    | pythonin dokumentaation opiskelua |
+| 05.12. | 1    | koodin refactorointia |
+| 06.12. | 1    | koodin refactorointia |
+|        | 1.5  | bugien korjausta ja refactorointia |
 
-| yht   | 23.5   | | 
+| yht    | 25   | | 

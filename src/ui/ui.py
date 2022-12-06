@@ -1,7 +1,8 @@
 from tkinter import Tk, Frame, Label, Button, SE
 import math
+from ast import literal_eval
 
-def_f = ('Cambria', 14)
+def_f = ('Cambria', 11)
 
 
 class UI:
@@ -11,7 +12,8 @@ class UI:
         self.root.configure(bg="#202020")
         self.root.resizable(False, False)
 
-        self.current_value = ""
+        self.current_value = "0"
+        self.newnum = True
 
         self.create_ui()
         self.create_buttons()
@@ -78,7 +80,8 @@ class UI:
                height=4, width=5, font=def_f,  command=self.ac_btn_func).grid(column=1, row=0)
 
     def ac_btn_func(self):
-        self.current_value = ""
+        self.current_value = "0"
+        self.newnum = True
         self.update_values()
 
     def sqrt_btn_func(self):
@@ -86,11 +89,11 @@ class UI:
         self.update_values()
 
     def prct_btn_func(self):
-        self.current_value = str(eval(self.current_value)/100)
+        self.current_value = str(literal_eval(self.current_value)/100)
         self.update_values()
 
     def plusminus_btn_func(self):
-        self.current_value = str(-(int(self.current_value)))
+        self.current_value = str(-(float(self.current_value)))
         self.update_values()
 
     def equals_btn_func(self):
@@ -105,8 +108,15 @@ class UI:
         self.line.config(text=self.current_value)
 
     def set_total(self, value):
-        self.current_value += value
-        self.line.config(text=self.current_value)
+        if self.newnum:
+            self.current_value = str(value)
+            self.newnum = False
+        else:
+            if str(value) == ".":
+                if str(value) in self.current_value:
+                    return
+            self.current_value = self.current_value + str(value)
+        self.update_values()
 
     def create_ui(self):
         self.screen = self.screen_space()
