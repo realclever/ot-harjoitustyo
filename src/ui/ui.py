@@ -98,12 +98,10 @@ class UI:
 
     def equals_btn_func(self):
         self.current_value = str(eval(self.current_value))
-        print("Yhtäkuin merkkiä painettu")
         self.update_values()
 
     def press(self, value):
         self.current_value += str(value)
-        print("plus merkkiä painettu")
         self.update_values()
 
     def update_values(self):
@@ -118,7 +116,6 @@ class UI:
                 if str(value) in self.current_value:
                     return
             self.current_value = self.current_value + str(value)
-        print("numeroa painettu")
         self.update_values()
 
     def create_ui(self):
