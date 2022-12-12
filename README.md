@@ -11,6 +11,9 @@ Käyttäjä voi laskea yksinkertaisia laskutoimituksia sovelluksen avulla. Sovel
 - [Työaikakirjanpito](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md) 
+- [Käyttöohje](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/kayttoohje.md)
+- [Testaus](https://github.com/realclever/ot-harjoitustyo/blob/main/dokumentaatio/testaus.md)
+
  
 
 ## Asennus
