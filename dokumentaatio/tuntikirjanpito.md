@@ -22,4 +22,9 @@
 | 06.12. | 1    | koodin refactorointia |
 |        | 1.5  | bugien korjausta ja refactorointia |
 |        | 0.5  | arkkitehtuurikuvaus |
-| yht    | 25.5 | | 
+| 07.12. | 2    | uusien näppäimien ja niiden funktioiden luonti |
+|        | 0.5  | näppäimien uudelleensijoittelu |
+| 10.12. | 2    | testien kirjoittamista ja korjauksia |
+| 11.12. | 0.5  | testien kirjoittamista ja korjauksia |
+| 12.12. | 2    | käyttöliittymän ja loogikan erittymistä - lisätään lopulliseen palautukseen |
+| yht    | 32.5 | | 

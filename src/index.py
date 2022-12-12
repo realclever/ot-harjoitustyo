@@ -1,10 +1,10 @@
-from ui.ui import UI
+from ui.cal_ui import UI
 
 
-class Main():
+class main():  # pylint: disable=invalid-name
     calculator = UI()
     calculator.start()
 
 
 if __name__ == "__main__":
-    Main()
+    main()

@@ -1,6 +1,6 @@
 [run]
 source = src
-omit = src/**/__init__.py,src/tests/**
+omit = src/**/__init__.py,src/tests/**, src/index.py
 
 [report]
 exclude_lines =

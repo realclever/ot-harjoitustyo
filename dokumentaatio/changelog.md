@@ -18,4 +18,13 @@
 - Neliöjuuri näppäin lisätty
 - Yleisimpiä bugeja korjattu 
 
+## Viikko 6
+
+- Uusien näppäimien lisäys
+- Uusien näppäimien funktioiden toteutus
+- Ulkoasun parantelu
+- Yleisimpiä bugeja korjattu
+- Käyttöliittymän ja logiikan eriyttämistä
+
+
 
