@@ -19,4 +19,12 @@ IV. Käynnistä sovellus komennolla:
 Sovelluksella ei käytön näkökulmasta ole järjestelmävaatimuksia, eikä se vaadi erillistä konfigurointia. Käyttöjärjestelmällä on väliä, koska macOS ei tue tkinterin painikkeiden värin vaihtamista. 
 Sovellus on testattu macOS versiolla 13.0.1 Python versio (3.10.7), ja virtuaalityöaseman Linuxilla. Visuaalisesti paras käyttäjäkokemus saavutetaan Windows tai Linux käyttöjärjestelmillä. 
 
-## In progress
+## Laskin
+
+Sovellus käynnistyy laskimen näkymään.
+
+![laskinkuva](https://i.imgur.com/xGDbk4e.png)
+
+Laskin toimii samalla periaatteella kuten esimerkiksi Googlen oma websovellus, laskinta tulee käyttää hiirellä ja se ei tue näppäinkomentoja. Laskin sisältää perus nelilaskimen toiminnot sekä muutaman lisätoiminnon. 
+
+

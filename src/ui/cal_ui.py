@@ -55,7 +55,7 @@ class UI:
         line = Label(master=self.screen, text=self.current_value,
                      font=font2, anchor=SE, fg="#FFFFFF", bg="#000000")
         line.pack(
-            fill="both", expand=1, padx=3, pady=75)
+            fill="both", expand=1, padx=10, pady=75)
 
         return line
 
