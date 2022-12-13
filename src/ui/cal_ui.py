@@ -4,10 +4,10 @@ from ast import literal_eval
 
 font = ('Helvetica', 13, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
-         'fg': "#000000", 'bg': "#323232", 'highlightbackground': "#000000"}
+         'fg': "#FFFFFF", 'bg': "#323232", 'highlightbackground': "#000000"}
 font2 = ('Helvetica', 38, 'bold')
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
-          'fg': "#000000", 'bg': "#3a3a3a", 'highlightbackground': "#000000"}
+          'fg': "#FFFFFF", 'bg': "#3a3a3a", 'highlightbackground': "#000000"}
 
 
 class UI:
@@ -64,7 +64,8 @@ class UI:
         Creates numerical buttons 0-9 and "." and inserts them in their respective places.
         """
         numbers_dict = {
-            1: (4, 1), 2: (4, 2), 3: (4, 3), 4: (3, 1), 5: (3, 2), 6: (3, 3), 7: (2, 1), 8: (2, 2), 9: (2, 3), 0: (5, 2), '.': (5, 3)
+            1: (4, 1), 2: (4, 2), 3: (4, 3), 4: (3, 1), 5: (3, 2),
+            6: (3, 3), 7: (2, 1), 8: (2, 2), 9: (2, 3), 0: (5, 2), '.': (5, 3)
         }
 
         for num, dic in numbers_dict.items():
@@ -231,18 +232,19 @@ class UI:
         try:
             self.current_value = str(eval(self.current_value))
             self.update_values()
-        except (ValueError, ZeroDivisionError):
+        except (ValueError, ZeroDivisionError, SyntaxError):
             self.current_value = "Syntax error"
         finally:
             self.update_values()
 
     def reci_btn_func(self):
         """
-        Reciprocal button logic. Uses inner helper function to calculate reciprocal value. If calculation is incorrect, sets currrent value as "Syntax error".
+        Reciprocal button logic. Uses inner helper function to calculate reciprocal value.
+        If calculation is incorrect, sets currrent value as "Syntax error".
         """
         def reciprocal(value):
             """
-            Helper function to calculate reciprocal value. 
+            Helper function to calculate reciprocal value.
 
             Returns:
                 Reciprolcal value
@@ -251,7 +253,7 @@ class UI:
         try:
             self.current_value = str(reciprocal((float(self.current_value))))
             self.update_values()
-        except ValueError:
+        except (ValueError, ZeroDivisionError):
             self.current_value = "Syntax error"
         finally:
             self.update_values()
@@ -271,14 +273,14 @@ class UI:
 
     def sqrd_btn_func(self):
         """
-        Squared button logic. 
+        Squared button logic.
         """
         self.current_value = str(math.pow(float(self.current_value), 2))
         self.update_values()
 
     def press(self, value):
         """
-        Logic for general buttons (0-9), "." and operators. 
+        Logic for general buttons (0-9), "." and operators.
 
         Args:
             value: Pressed button.
