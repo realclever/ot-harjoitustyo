@@ -14,6 +14,8 @@ Sovelluksella on ainoastaan yksi käyttäjärooli (käyttäjä), eikä sovellus 
 
 Käyttäjä voi suorittaa yleisimpiä laskutoimituksia, kuten plus, miinus, kerto sekä jakolaskuja. Lisäksi sovelluksessa on kenttä, jossa laskutoimitus ja sen tulos ovat näkyvillä. Lisäksi sovelluksesta löytyy edellämainittujen lisäksi numerot 0-9, yhtä kuin, nollaus sekä piste desimaaleja varten. Sovelluksessa on yksi näkymä, joka aukeaa kun sovellus käynnistetään. 
 
+- [x] Kaikki edellä mainitut toiminallisuudet ovat toteutettu release II:ssa. 
+
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää voidaan täydentää esimerkiksi seuraavilla toiminnallisuuksilla:
