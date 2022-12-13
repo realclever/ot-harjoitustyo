@@ -2,11 +2,12 @@ from tkinter import Tk, Frame, Label, Button, SE
 import math
 from ast import literal_eval
 
-font = ('Helvetica', 13)
+font = ('Helvetica', 13, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
-         'fg': "#FFFFFF", 'bg': "#323232", 'highlightbackground': "#000000"}
+         'fg': "#000000", 'bg': "#323232", 'highlightbackground': "#000000"}
+font2 = ('Helvetica', 38, 'bold')
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
-          'fg': "#FFFFFF", 'bg': "#3a3a3a", 'highlightbackground': "#000000"}
+          'fg': "#000000", 'bg': "#3a3a3a", 'highlightbackground': "#000000"}
 
 
 class UI:
@@ -52,7 +53,7 @@ class UI:
          Calculations line component
         """
         line = Label(master=self.screen, text=self.current_value,
-                     font=('Helvetica', 40), anchor=SE, fg="#FFFFFF", bg="#000000")
+                     font=font2, anchor=SE, fg="#FFFFFF", bg="#000000")
         line.pack(
             fill="both", expand=1, padx=3, pady=75)
 
@@ -113,6 +114,9 @@ class UI:
                **style, font=font, command=self.equals_btn_func).grid(column=4, row=5)
 
     def percent_btn(self):
+        """
+        Creates percentage button.
+        """
         Button(master=self.buttons, text="%",
                **style, font=font, command=self.prct_btn_func).grid(column=2, row=0)
 
@@ -138,20 +142,52 @@ class UI:
                **style, font=font, command=self.del_btn_func).grid(column=4, row=0)
 
     def sqrd_btn(self):
+        """
+        Creates squared button.
+        """
         Button(master=self.buttons, text="x\u00b2",
                **style, font=font,  command=self.sqrd_btn_func).grid(column=3, row=1)
 
     def reci_btn(self):
+        """
+        Creates reciprocal button.
+        """
         Button(master=self.buttons, text="1/x",
                **style, font=font,  command=self.reci_btn_func).grid(column=2, row=1)
 
     def facto_btn(self):
+        """
+        Creates factorial button.
+        """
         Button(master=self.buttons, text="x!",
                **style, font=font,  command=self.facto_btn_func).grid(column=1, row=1)
 
+    def set_total(self, value):
+        """
+        Helper to set and check the initial character of the calculations line.
+
+        Args:
+            value: Pressed value
+        """
+        if self.newnum:
+            self.current_value = str(value)
+            self.newnum = False
+        else:
+            if str(value) == ".":
+                if str(value) in self.current_value:
+                    return
+            self.current_value += str(value)
+        self.update_values()
+
+    def update_values(self):
+        """
+        Updates the line value for calculations.
+        """
+        self.line.config(text=self.current_value)
+
     def ac_btn_func(self):
         """
-        Resets calculations line to 0
+        Resets calculations line to "0".
         """
         self.current_value = "0"
         self.newnum = True
@@ -159,7 +195,7 @@ class UI:
 
     def del_btn_func(self):
         """
-        Removes the last of character of string, until it equals 0
+        Removes the last of character of string, until it equals "0".
         """
         self.current_value = self.current_value[:-1]
         if self.current_value == "":
@@ -168,40 +204,61 @@ class UI:
         self.update_values()
 
     def sqrt_btn_func(self):
+        """
+        Square root button logic.
+        """
         self.current_value = str(math.sqrt((float(self.current_value))))
         self.update_values()
 
     def prct_btn_func(self):
+        """
+        Percentage button logic.
+        """
         self.current_value = str(literal_eval(self.current_value)/100)
         self.update_values()
 
     def plusminus_btn_func(self):
+        """
+        Plus-minus button logic.
+        """
         self.current_value = str(-(float(self.current_value)))
         self.update_values()
 
     def equals_btn_func(self):
+        """
+        Equals button logic. If calculation is incorrect, sets currrent value as "Syntax error".
+        """
         try:
             self.current_value = str(eval(self.current_value))
             self.update_values()
-        except ZeroDivisionError:
+        except (ValueError, ZeroDivisionError):
             self.current_value = "Syntax error"
         finally:
             self.update_values()
 
     def reci_btn_func(self):
+        """
+        Reciprocal button logic. Uses inner helper function to calculate reciprocal value. If calculation is incorrect, sets currrent value as "Syntax error".
+        """
         def reciprocal(value):
+            """
+            Helper function to calculate reciprocal value. 
+
+            Returns:
+                Reciprolcal value
+            """
             return 1.0 / value
         try:
             self.current_value = str(reciprocal((float(self.current_value))))
             self.update_values()
-        except ZeroDivisionError:
+        except ValueError:
             self.current_value = "Syntax error"
         finally:
             self.update_values()
 
     def facto_btn_func(self):
         """
-        Generates UI components screen, buttons and line for calculations.
+        Factorial button logic. If calculation is incorrect, sets currrent value as "Syntax error"
         """
         try:
             self.current_value = str(literal_eval(
@@ -213,28 +270,20 @@ class UI:
             self.update_values()
 
     def sqrd_btn_func(self):
+        """
+        Squared button logic. 
+        """
         self.current_value = str(math.pow(float(self.current_value), 2))
         self.update_values()
 
-    def press(self, operator):
-        self.current_value += str(operator)
-        self.update_values()
-
-    def update_values(self):
+    def press(self, value):
         """
-        Updates the line value for calculations.
-        """
-        self.line.config(text=self.current_value)
+        Logic for general buttons (0-9), "." and operators. 
 
-    def set_total(self, value):
-        if self.newnum:
-            self.current_value = str(value)
-            self.newnum = False
-        else:
-            if str(value) == ".":
-                if str(value) in self.current_value:
-                    return
-            self.current_value = self.current_value + str(value)
+        Args:
+            value: Pressed button.
+        """
+        self.current_value += str(value)
         self.update_values()
 
     def create_ui(self):
@@ -247,7 +296,7 @@ class UI:
 
     def create_buttons(self):
         """
-        Generates all the buttons.
+        Generates all buttons.
         """
         self.numerical_values()
         self.equals_btn()
@@ -263,7 +312,6 @@ class UI:
         self.sqrd_btn()
         self.reci_btn()
         self.facto_btn()
-
 
     def start(self):
         """
