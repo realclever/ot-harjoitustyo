@@ -3,7 +3,7 @@
 
 Käyttäjä voi laskea yksinkertaisia laskutoimituksia sovelluksen avulla. Sovelluksesta löytyy kaikki nelilaskimen perustoiminnot. Sovellus on kehitetty ja testattu Python versiolla 3.10.7.
 
-- [Release 1](https://github.com/realclever/ot-harjoitustyo/releases/tag/viikko5)
+- [Release II](https://github.com/realclever/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Dokumentaatio
 
