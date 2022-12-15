@@ -28,4 +28,5 @@
 | 11.12. | 0.5  | testien kirjoittamista ja korjauksia |
 | 12.12. | 2    | käyttöliittymän ja loogikan erittymistä - lisätään lopulliseen palautukseen |
 | 13.12. | 1    | arkkitehtuurinkuvauksen ja käyttöohjeen muokkaamista |
-| yht    | 33.5 | | 
+| 15.12. | 3.5  | toinen rivi laskimelle ja virheidentarkitusta |
+| yht    | 37 | | 
