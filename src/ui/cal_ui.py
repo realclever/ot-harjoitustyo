@@ -3,9 +3,10 @@ import math
 from ast import literal_eval
 
 font = ('Helvetica', 13, 'bold')
+font2 = ('Helvetica', 38, 'bold')
+font3 = ('Helvetica', 21, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
          'fg': "#FFFFFF", 'bg': "#323232", 'highlightbackground': "#000000"}
-font2 = ('Helvetica', 38, 'bold')
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
           'fg': "#FFFFFF", 'bg': "#3a3a3a", 'highlightbackground': "#000000"}
 
@@ -21,6 +22,7 @@ class UI:
         self.root.resizable(False, False)
 
         self.current_value = "0"
+        self.secondary_value = ""
         self.newnum = True
 
         self.create_ui()
@@ -40,10 +42,24 @@ class UI:
 
     def screen_space(self):
         """
-        Creates frame (space) for whole screen.
+        Creates frame (space) for main screen.
         """
         Frame(master=self.root, highlightbackground="#000000").pack(
             fill="both", expand=1)
+
+    def secondary_screen_line(self):
+        """
+        Creates secondary label for line where the calculations take place.
+
+        Returns:
+         Calculations line component
+        """
+        secondline = Label(master=self.screen, text=self.secondary_value,
+                           font=font3, anchor=SE, fg="#FFFFFF", bg="#000000")
+        secondline.pack(
+            fill="both", expand=1, padx=10, pady=30)
+
+        return secondline
 
     def screen_line(self):
         """
@@ -55,7 +71,7 @@ class UI:
         line = Label(master=self.screen, text=self.current_value,
                      font=font2, anchor=SE, fg="#FFFFFF", bg="#000000")
         line.pack(
-            fill="both", expand=1, padx=10, pady=75)
+            fill="both", expand=1, padx=10, pady=55)
 
         return line
 
@@ -153,7 +169,7 @@ class UI:
         """
         Creates reciprocal button.
         """
-        Button(master=self.buttons, text="1/x",
+        Button(master=self.buttons, text="x\u207B" "\u00B9",
                **style, font=font,  command=self.reci_btn_func).grid(column=2, row=1)
 
     def facto_btn(self):
@@ -179,6 +195,7 @@ class UI:
                     return
             self.current_value += str(value)
         self.update_values()
+        self.update_second_values()
 
     def update_values(self):
         """
@@ -186,56 +203,92 @@ class UI:
         """
         self.line.config(text=self.current_value)
 
+    def update_second_values(self):
+        """
+        Updates the secondary line value for calculations.
+        """
+        self.secondline.config(text=self.secondary_value)
+
     def ac_btn_func(self):
         """
         Resets calculations line to "0".
         """
         self.current_value = "0"
+        self.secondary_value = ""
         self.newnum = True
         self.update_values()
+        self.update_second_values()
 
     def del_btn_func(self):
         """
         Removes the last of character of string, until it equals "0".
         """
         self.current_value = self.current_value[:-1]
+        self.secondary_value = self.secondary_value[:-1]
         if self.current_value == "":
             self.newnum = True
             self.current_value = "0"
+            self.secondary_value = ""
         self.update_values()
+        self.update_second_values()
 
     def sqrt_btn_func(self):
         """
         Square root button logic.
         """
-        self.current_value = str(math.sqrt((float(self.current_value))))
-        self.update_values()
+        try: 
+            self.secondary_value = ""
+            self.secondary_value = '√' + self.current_value + self.secondary_value
+        except BaseException:    
+            self.current_value = "Syntax error"
+            self.secondary_value = ""
+        finally:     
+            self.current_value = str(math.sqrt((float(self.current_value))))
+            self.update_values()
+            self.update_second_values()
 
     def prct_btn_func(self):
         """
         Percentage button logic.
         """
-        self.current_value = str(literal_eval(self.current_value)/100)
-        self.update_values()
+        try:
+            self.secondary_value = ""
+            self.secondary_value = self.current_value + self.secondary_value + '%'
+        except BaseException:    
+            self.current_value = "Syntax error"
+            self.secondary_value = ""
+        finally:    
+            self.current_value = str(literal_eval(self.current_value)/100)
+            self.update_values()
+            self.update_second_values()
 
     def plusminus_btn_func(self):
         """
         Plus-minus button logic.
         """
-        self.current_value = str(-(float(self.current_value)))
-        self.update_values()
+        try:
+            self.current_value = str(-(float(self.current_value)))
+        except BaseException:    
+            self.current_value = "Syntax error"
+            self.secondary_value = ""    
+        finally:    
+            self.update_values()
 
     def equals_btn_func(self):
         """
         Equals button logic. If calculation is incorrect, sets currrent value as "Syntax error".
         """
+        self.secondary_value = self.current_value
+        self.update_second_values()
         try:
-            self.current_value = str(eval(self.current_value))
-            self.update_values()
-        except (ValueError, ZeroDivisionError, SyntaxError):
+            self.current_value = str(eval(self.secondary_value))
+            self.secondary_value = self.secondary_value + ' ='
+        except BaseException:
             self.current_value = "Syntax error"
+            self.secondary_value = ""
         finally:
             self.update_values()
+            self.update_second_values()
 
     def reci_btn_func(self):
         """
@@ -251,32 +304,47 @@ class UI:
             """
             return 1.0 / value
         try:
+            self.secondary_value = ""
+            self.secondary_value = self.current_value + \
+                self.secondary_value + "\u207B" "\u00B9"
             self.current_value = str(reciprocal((float(self.current_value))))
-            self.update_values()
-        except (ValueError, ZeroDivisionError):
+        except BaseException:
             self.current_value = "Syntax error"
+            self.secondary_value = ""
         finally:
             self.update_values()
+            self.update_second_values()
 
     def facto_btn_func(self):
         """
         Factorial button logic. If calculation is incorrect, sets currrent value as "Syntax error"
         """
         try:
+            self.secondary_value = ""
+            self.secondary_value = self.current_value + self.secondary_value + '!'
             self.current_value = str(literal_eval(
                 str(math.factorial(int(self.current_value)))))
-            self.update_values()
-        except ValueError:
+        except BaseException:
             self.current_value = "Syntax error"
+            self.secondary_value = ""
         finally:
             self.update_values()
+            self.update_second_values()
 
     def sqrd_btn_func(self):
         """
         Squared button logic.
         """
-        self.current_value = str(math.pow(float(self.current_value), 2))
-        self.update_values()
+        try:
+            self.secondary_value = ""
+            self.secondary_value = self.current_value + self.secondary_value + '²'
+            self.current_value = str(math.pow(float(self.current_value), 2))
+        except BaseException:
+            self.current_value = "Syntax error"
+            self.secondary_value = ""   
+        finally:     
+            self.update_values()
+            self.update_second_values()
 
     def press(self, value):
         """
@@ -293,6 +361,7 @@ class UI:
         Generates UI components screen, buttons and line for calculations.
         """
         self.screen = self.screen_space()
+        self.secondline = self.secondary_screen_line()
         self.line = self.screen_line()
         self.buttons = self.buttons_space()
 
