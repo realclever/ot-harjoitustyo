@@ -29,4 +29,5 @@
 | 12.12. | 2    | käyttöliittymän ja loogikan erittymistä - lisätään lopulliseen palautukseen |
 | 13.12. | 1    | arkkitehtuurinkuvauksen ja käyttöohjeen muokkaamista |
 | 15.12. | 3.5  | toinen rivi laskimelle ja virheidentarkitusta |
-| yht    | 37 | | 
+| 16.12. | 0.5  | dokumentaation korjailua |
+| yht    | 37.5 | | 

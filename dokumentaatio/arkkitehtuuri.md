@@ -27,6 +27,8 @@ Kun laskin käynnistetään ja halutaan suorittaa yksinkertainen 2 + 2 = 4 lasku
 
 ![alt text](https://i.imgur.com/rBIPRFB.png)
 
+![alt text](https://i.imgur.com/h5eX0Fb.png)
+
 
 ### Muut toiminnallisuudet
 

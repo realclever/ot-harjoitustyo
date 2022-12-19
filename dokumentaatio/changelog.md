@@ -24,7 +24,13 @@
 - Uusien näppäimien funktioiden toteutus
 - Ulkoasun parantelu
 - Yleisimpiä bugeja korjattu
-- Käyttöliittymän ja logiikan eriyttämistä
+
+## Viikko 7 
+
+- Toisen näyttörivin lisäys
+- Ulkoasun muokkaus/parantelu
+- Yleisimpiä bugeja korjattu
+- Käyttöliittymän ja logiikan eriytys
 
 
 
