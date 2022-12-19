@@ -240,7 +240,7 @@ class CalService:
         try:
             self.secondary_value = ""
             self.secondary_value = '√' + self.current_value + self.secondary_value
-        except (ValueError, ArithmeticError):
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -255,7 +255,7 @@ class CalService:
         try:
             self.secondary_value = ""
             self.secondary_value = self.current_value + self.secondary_value + '%'
-        except BaseException:
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -269,7 +269,7 @@ class CalService:
         """
         try:
             self.current_value = str(-(float(self.current_value)))[:8]
-        except BaseException:
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -284,7 +284,7 @@ class CalService:
         try:
             self.current_value = str(eval(self.secondary_value))
             self.secondary_value = self.secondary_value + ' ='
-        except BaseException:
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -309,7 +309,7 @@ class CalService:
             self.secondary_value = self.current_value + \
                 self.secondary_value + "\u207B" "\u00B9"
             self.current_value = str(reciprocal((float(self.current_value))))[:8]
-        except BaseException:
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -325,7 +325,7 @@ class CalService:
             self.secondary_value = self.current_value + self.secondary_value + '!'
             self.current_value = str(literal_eval(
                 str(math.factorial(int(self.current_value)))))[:8]
-        except BaseException:
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -340,7 +340,7 @@ class CalService:
             self.secondary_value = ""
             self.secondary_value = self.current_value + self.secondary_value + '²'
             self.current_value = str(math.pow(float(self.current_value), 2))[:8]
-        except BaseException:
+        except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
@@ -358,6 +358,9 @@ class CalService:
         self.update_values()
 
     def iniate_screen_components(self):
+        """
+        Iniates screenlines and buttons
+        """
         self.secondline = self.secondary_screen_line()
         self.line = self.screen_line()
         self.buttons = self.buttons_space()

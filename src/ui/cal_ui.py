@@ -1,11 +1,13 @@
 from services.cal_service import cal_service
+
+
 class UI:
     def __init__(self):
         """
         Constructor that creates the calculator UI/buttons.
         """
         self.create_buttons()
-        
+
     def create_buttons(self):
         """
         Generates all the calculator buttons.
@@ -29,4 +31,4 @@ class UI:
         """
         Iniates components and starts the UI 
         """
-        cal_service.root.mainloop()      
+        cal_service.root.mainloop()
