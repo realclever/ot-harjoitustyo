@@ -30,4 +30,5 @@
 | 13.12. | 1    | arkkitehtuurinkuvauksen ja käyttöohjeen muokkaamista |
 | 15.12. | 3.5  | toinen rivi laskimelle ja virheidentarkitusta |
 | 16.12. | 0.5  | dokumentaation korjailua |
-| yht    | 37.5 | | 
+| 19.12. | 0.5  | logiikan korjailua |
+| yht    | 38.0 | | 

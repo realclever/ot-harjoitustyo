@@ -7,9 +7,9 @@ font = ('Helvetica', 13, 'bold')
 font2 = ('Helvetica', 38, 'bold')
 font3 = ('Helvetica', 22, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
-         'fg': "#FFFFFF", 'bg': "#323232", 'highlightbackground': "#202124"}
+         'fg': "#000000", 'bg': "#323232", 'highlightbackground': "#202124"}
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
-          'fg': "#FFFFFF", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
+          'fg': "#000000", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
 
 
 class CalService:
@@ -268,7 +268,11 @@ class CalService:
         Plus-minus button logic.
         """
         try:
-            self.current_value = str(-(float(self.current_value)))[:8]
+            if self.current_value.lstrip('-+').isdigit():
+                print(self.current_value)
+                self.current_value = str(-(int(self.current_value)))[:8]
+            else:
+                self.current_value = str(-(float(self.current_value)))[:8]
         except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
