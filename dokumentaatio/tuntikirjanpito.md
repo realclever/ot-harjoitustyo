@@ -31,4 +31,6 @@
 | 15.12. | 3.5  | toinen rivi laskimelle ja virheidentarkitusta |
 | 16.12. | 0.5  | dokumentaation korjailua |
 | 19.12. | 0.5  | logiikan korjailua |
-| yht    | 38.0 | | 
+| 20.12. | 0.5  | testausdokumentin laatiminen |
+| 21.12. | 4    | loogikan korjausta |
+| yht    | 42.5 | | 

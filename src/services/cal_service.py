@@ -4,12 +4,12 @@ from ast import literal_eval
 
 
 font = ('Helvetica', 13, 'bold')
-font2 = ('Helvetica', 38, 'bold')
+font2 = ('Helvetica', 39, 'bold')
 font3 = ('Helvetica', 22, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
-         'fg': "#000000", 'bg': "#323232", 'highlightbackground': "#202124"}
+         'fg': "#FFFFFF", 'bg': "#323232", 'highlightbackground': "#202124"}
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
-          'fg': "#000000", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
+          'fg': "#FFFFFF", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
 
 
 class CalService:
@@ -22,7 +22,7 @@ class CalService:
         self.root.configure(bg="#202124")
         self.root.resizable(False, False)
 
-        self.current_value = "0"
+        self.current_value = ""
         self.secondary_value = ""
         self.newnum = True
 
@@ -54,7 +54,7 @@ class CalService:
         Returns:
          Calculations line component
         """
-        line = Label(master=self.screen_space(), text=self.current_value,
+        line = Label(master=self.screen, text=self.current_value,
                      font=font2, anchor=SE, fg="#e7eaed", bg="#202124")
         line.pack(
             fill="both", expand=1, padx=10, pady=55)
@@ -68,7 +68,7 @@ class CalService:
         Returns:
          Calculations line component
         """
-        secondline = Label(master=self.screen_space(), text=self.secondary_value,
+        secondline = Label(master=self.screen, text=self.secondary_value,
                            font=font3, anchor=SE, fg="#969ba1", bg="#202124")
         secondline.pack(
             fill="both", expand=1, padx=10, pady=30)
@@ -93,28 +93,28 @@ class CalService:
         Creates plus button.
         """
         Button(master=self.buttons, text="+", **style, font=font,
-               command=lambda: self.press(" + ")).grid(column=4, row=4)
+               command=lambda: self.press("+")).grid(column=4, row=4)
 
     def minus_btn(self):
         """
         Creates minus button.
         """
         Button(master=self.buttons, text="-", **style, font=font,
-               command=lambda: self.press(" - ")).grid(column=4, row=3)
+               command=lambda: self.press("-")).grid(column=4, row=3)
 
     def multiplication_btn(self):
         """
         Creates multiplication button.
         """
         Button(master=self.buttons, text="\u00D7",
-               **style, font=font, command=lambda: self.press(" * ")).grid(column=4, row=2)
+               **style, font=font, command=lambda: self.press("*")).grid(column=4, row=2)
 
     def division_btn(self):
         """
         Creates division button.
         """
         Button(master=self.buttons, text="÷",
-               **style, font=font, command=lambda: self.press(" / ")).grid(column=4, row=1)
+               **style, font=font, command=lambda: self.press("/")).grid(column=4, row=1)
 
     def sqrt_btn(self):
         """
@@ -186,15 +186,7 @@ class CalService:
         Args:
             value: Pressed value
         """
-        if self.newnum:
-            self.current_value = str(value)
-            self.newnum = False
-        else:
-            if str(value) == ".":
-                self.current_value += str(value)
-                if str(value) in self.current_value:
-                    return
-            self.current_value += str(value)
+        self.current_value += str(value)
         self.update_values()
         self.update_second_values()
 
@@ -212,9 +204,9 @@ class CalService:
 
     def ac_btn_func(self):
         """
-        Resets calculations line to "0".
+        Resets calculation lines to "".
         """
-        self.current_value = "0"
+        self.current_value = ""
         self.secondary_value = ""
         self.newnum = True
         self.update_values()
@@ -222,13 +214,13 @@ class CalService:
 
     def del_btn_func(self):
         """
-        Removes the last of character of string, until it equals "0".
+        Removes the last of character of string, until it equals "".
         """
         self.current_value = self.current_value[:-1]
         self.secondary_value = self.secondary_value[:-1]
         if self.current_value == "":
             self.newnum = True
-            self.current_value = "0"
+            self.current_value = ""
             self.secondary_value = ""
         self.update_values()
         self.update_second_values()
@@ -244,7 +236,8 @@ class CalService:
             self.current_value = "Syntax error"
             self.secondary_value = ""
         finally:
-            self.current_value = str(math.sqrt((float(self.current_value))))[:8]
+            self.current_value = str(
+                math.sqrt((float(self.current_value))))[:8]
             self.update_values()
             self.update_second_values()
 
@@ -269,7 +262,6 @@ class CalService:
         """
         try:
             if self.current_value.lstrip('-+').isdigit():
-                print(self.current_value)
                 self.current_value = str(-(int(self.current_value)))[:8]
             else:
                 self.current_value = str(-(float(self.current_value)))[:8]
@@ -281,12 +273,13 @@ class CalService:
 
     def equals_btn_func(self):
         """
-        Equals button logic. If calculation is incorrect, sets currrent value as "Syntax error".
+        Equals button logic. If calculation is incorrect,
+        sets currrent value as "Syntax error" and clears the secondary line.
         """
         self.secondary_value = self.current_value
         self.update_second_values()
         try:
-            self.current_value = str(eval(self.secondary_value))
+            self.current_value = str(eval(self.secondary_value))[:8]
             self.secondary_value = self.secondary_value + ' ='
         except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
@@ -312,7 +305,8 @@ class CalService:
             self.secondary_value = ""
             self.secondary_value = self.current_value + \
                 self.secondary_value + "\u207B" "\u00B9"
-            self.current_value = str(reciprocal((float(self.current_value))))[:8]
+            self.current_value = str(reciprocal(
+                (float(self.current_value))))[:8]
         except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
@@ -322,7 +316,8 @@ class CalService:
 
     def facto_btn_func(self):
         """
-        Factorial button logic. If calculation is incorrect, sets currrent value as "Syntax error"
+        Factorial button logic.
+        If calculation is incorrect, sets value as "Syntax error", using non-negative integers.
         """
         try:
             self.secondary_value = ""
@@ -343,7 +338,7 @@ class CalService:
         try:
             self.secondary_value = ""
             self.secondary_value = self.current_value + self.secondary_value + '²'
-            self.current_value = str(math.pow(float(self.current_value), 2))[:8]
+            self.current_value = str(eval(f'{self.current_value}**2'))[:6]
         except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
             self.secondary_value = ""
@@ -353,18 +348,21 @@ class CalService:
 
     def press(self, value):
         """
-        Logic for general buttons (0-9), "." and operators.
+        Logic for pressing operators.
 
         Args:
             value: Pressed button.
         """
+
         self.current_value += str(value)
         self.update_values()
+        self.update_second_values()
 
     def iniate_screen_components(self):
         """
         Iniates screenlines and buttons
         """
+        self.screen = self.screen_space()
         self.secondline = self.secondary_screen_line()
         self.line = self.screen_line()
         self.buttons = self.buttons_space()
