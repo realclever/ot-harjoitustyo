@@ -12,6 +12,8 @@ class TestCalculator(unittest.TestCase):
         self.root.press(".")
         self.root.press("2")
         self.root.press("5")
+        self.assertEqual(self.root.current_value, ".25")
+        self.root.equals_btn_func()
         self.assertEqual(self.root.current_value, "0.25")
 
     def test_set_total_func_two(self):
@@ -36,7 +38,7 @@ class TestCalculator(unittest.TestCase):
     def test_ac_func(self):
         self.root.current_value = "100"
         self.root.ac_btn_func()
-        self.assertEqual(self.root.current_value, "")
+        self.assertEqual(self.root.current_value, "0")
 
     def test_plusminus_func(self):
         self.root.current_value = "100"
@@ -45,7 +47,7 @@ class TestCalculator(unittest.TestCase):
         self.root.plusminus_btn_func()
         self.assertEqual(self.root.current_value, "100")
         self.root.ac_btn_func()
-        self.assertEqual(self.root.current_value, "")
+        self.assertEqual(self.root.current_value, "0")
         self.root.current_value = "1.1"
         self.assertEqual(self.root.current_value, "1.1")
         self.root.plusminus_btn_func()
@@ -92,12 +94,12 @@ class TestCalculator(unittest.TestCase):
         self.root.del_btn_func()
         self.assertEqual(self.root.current_value, "1")
         self.root.del_btn_func()
-        self.assertEqual(self.root.current_value, "")
+        self.assertEqual(self.root.current_value, "0")
 
     def test_del_func_two(self):
         self.root.current_value = "0"
         self.root.del_btn_func()
-        self.assertEqual(self.root.current_value, "")
+        self.assertEqual(self.root.current_value, "0")
 
     def test_facto_func(self):
         self.root.current_value = "5"

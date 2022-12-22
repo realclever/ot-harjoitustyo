@@ -7,9 +7,9 @@ font = ('Helvetica', 13, 'bold')
 font2 = ('Helvetica', 39, 'bold')
 font3 = ('Helvetica', 22, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
-         'fg': "#FFFFFF", 'bg': "#323232", 'highlightbackground': "#202124"}
+         'fg': "#000000", 'bg': "#323232", 'highlightbackground': "#202124"}
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
-          'fg': "#FFFFFF", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
+          'fg': "#000000", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
 
 
 class CalService:
@@ -22,7 +22,7 @@ class CalService:
         self.root.configure(bg="#202124")
         self.root.resizable(False, False)
 
-        self.current_value = ""
+        self.current_value = "0"
         self.secondary_value = ""
         self.newnum = True
 
@@ -186,7 +186,11 @@ class CalService:
         Args:
             value: Pressed value
         """
-        self.current_value += str(value)
+        if self.current_value == "0":
+            self.current_value = f'{value}'
+        else:
+             self.current_value = f'{self.current_value}{value}'
+
         self.update_values()
         self.update_second_values()
 
@@ -204,9 +208,9 @@ class CalService:
 
     def ac_btn_func(self):
         """
-        Resets calculation lines to "".
+        Resets calculation lines to "0" and "".
         """
-        self.current_value = ""
+        self.current_value = "0"
         self.secondary_value = ""
         self.newnum = True
         self.update_values()
@@ -214,13 +218,13 @@ class CalService:
 
     def del_btn_func(self):
         """
-        Removes the last of character of string, until it equals "".
+        Removes the last of character of string, until it equals "0".
         """
         self.current_value = self.current_value[:-1]
         self.secondary_value = self.secondary_value[:-1]
         if self.current_value == "":
             self.newnum = True
-            self.current_value = ""
+            self.current_value = "0"
             self.secondary_value = ""
         self.update_values()
         self.update_second_values()
@@ -353,8 +357,11 @@ class CalService:
         Args:
             value: Pressed button.
         """
+        if self.current_value == "0":
+            self.current_value = f'{value}'   
+        else:
+             self.current_value = f'{self.current_value}{value}'
 
-        self.current_value += str(value)
         self.update_values()
         self.update_second_values()
 

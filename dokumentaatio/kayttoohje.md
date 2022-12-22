@@ -21,9 +21,9 @@ Sovellus on testattu macOS versiolla 13.0.1 Python versio (3.10.7), ja virtuaali
 
 ## Laskin
 
-Sovellus käynnistyy laskimen näkymään (suunniteltu ulkoasu).
+Sovellus käynnistyy laskimen näkymään.
 
-![laskinkuva](https://i.imgur.com/h5eX0Fb.png)
+![laskinkuva](https://i.imgur.com/XCgcWrH.png)
 
 Laskin toimii samalla periaatteella kuten esimerkiksi Googlen oma websovellus, laskinta tulee käyttää hiirellä ja se ei tue näppäinkomentoja. Laskin sisältää perus nelilaskimen toiminnot sekä muutaman lisätoiminnon. 
 
