@@ -7,9 +7,9 @@ font = ('Helvetica', 13, 'bold')
 font2 = ('Helvetica', 39, 'bold')
 font3 = ('Helvetica', 22, 'bold')
 style = {'height': 4, 'width': 10, 'borderwidth': 0,
-         'fg': "#000000", 'bg': "#323232", 'highlightbackground': "#202124"}
+         'fg': "#FFF", 'bg': "#323232", 'highlightbackground': "#202124"}
 style2 = {'height': 4, 'width': 10, 'borderwidth': 0,
-          'fg': "#000000", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
+          'fg': "#FFF", 'bg': "#3a3a3a", 'highlightbackground': "#202124"}
 
 
 class CalService:
@@ -54,7 +54,7 @@ class CalService:
         Returns:
          Calculations line component
         """
-        line = Label(master=self.screen, text=self.current_value,
+        line = Label(master=self.screen_space(), text=self.current_value,
                      font=font2, anchor=SE, fg="#e7eaed", bg="#202124")
         line.pack(
             fill="both", expand=1, padx=10, pady=55)
@@ -68,10 +68,10 @@ class CalService:
         Returns:
          Calculations line component
         """
-        secondline = Label(master=self.screen, text=self.secondary_value,
+        secondline = Label(master=self.screen_space(), text=self.secondary_value,
                            font=font3, anchor=SE, fg="#969ba1", bg="#202124")
         secondline.pack(
-            fill="both", expand=1, padx=10, pady=30)
+            fill="both", expand=1, padx=10, pady=23)
 
         return secondline
 
@@ -189,7 +189,7 @@ class CalService:
         if self.current_value == "0":
             self.current_value = f'{value}'
         else:
-             self.current_value = f'{self.current_value}{value}'
+            self.current_value = f'{self.current_value}{value}'
 
         self.update_values()
         self.update_second_values()
@@ -198,13 +198,13 @@ class CalService:
         """
         Updates the line value for calculations.
         """
-        self.line.config(text=self.current_value[:18])
+        self.line.config(text=self.current_value[:16])
 
     def update_second_values(self):
         """
         Updates the secondary line value for calculations.
         """
-        self.secondline.config(text=self.secondary_value[:18])
+        self.secondline.config(text=self.secondary_value[:16])
 
     def ac_btn_func(self):
         """
@@ -283,7 +283,7 @@ class CalService:
         self.secondary_value = self.current_value
         self.update_second_values()
         try:
-            self.current_value = str(eval(self.secondary_value))[:8]
+            self.current_value = str(eval(f'{self.current_value}'))[:8]
             self.secondary_value = self.secondary_value + ' ='
         except (ValueError, ArithmeticError, SyntaxError):
             self.current_value = "Syntax error"
@@ -358,9 +358,9 @@ class CalService:
             value: Pressed button.
         """
         if self.current_value == "0":
-            self.current_value = f'{value}'   
+            self.current_value = f'{value}'
         else:
-             self.current_value = f'{self.current_value}{value}'
+            self.current_value = f'{self.current_value}{value}'
 
         self.update_values()
         self.update_second_values()
@@ -369,7 +369,6 @@ class CalService:
         """
         Iniates screenlines and buttons
         """
-        self.screen = self.screen_space()
         self.secondline = self.secondary_screen_line()
         self.line = self.screen_line()
         self.buttons = self.buttons_space()

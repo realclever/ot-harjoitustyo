@@ -33,4 +33,6 @@
 | 19.12. | 0.5  | logiikan korjailua |
 | 20.12. | 0.5  | testausdokumentin laatiminen |
 | 21.12. | 4    | loogikan korjausta |
-| yht    | 42.5 | | 
+| 22.12. | 0.5  | testausta |
+|        | 1    | pylint korjaus ja testausta |
+| yht    | 44   | | 

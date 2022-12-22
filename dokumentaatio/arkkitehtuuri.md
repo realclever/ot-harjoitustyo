@@ -13,7 +13,7 @@ Pakkaus UI huolehtii osittain käyttöliittymän komponenteista (näppäimet) ja
 Käyttöliittymä on laskimen tapaan yksinkertainen, ja sisältää ainoastaan yhden näkymän - itse laskimen. Käyttöliittymä on eristetty osittain sovelluslogiikasta. 
 Käyttöliittymä pakkaus sisältää näppäimien luonti ja käyttöliittymän renderöinti metodit. 
 
-![laskinkuva](https://i.imgur.com/08hSj2J.png)
+![laskinkuva](https://i.imgur.com/7S0fDAK.png)
 Käyttöliittymä ja käynnistysnäkymä. 
 
 ## Tietojen pysyväistallennus
@@ -30,10 +30,13 @@ Kuvataan sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sek
 
 Kun laskin käynnistetään ja halutaan suorittaa esimerkiksi yksinkertainen 2 + 2 = 4 laskutoimitus, etenee sovellus seuraavasti:
 
+![laskinkuva](https://i.imgur.com/yfWdkjA.png)
+
 ### Virheellinen laskutoimitus
 
 Jos käyttäjä yrittää suorittaa laskimella esimerkiksi klassisen nollalla jako laskutoimituksen, etenee sovellus seuraavasti:
 
+![laskinkuva](https://i.imgur.com/buxFCuo.png)
 
 ### Muut toiminnallisuudet
 

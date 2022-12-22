@@ -10,9 +10,9 @@ Sovelluslogiikasta vastaavaa CalService luokkaa testattiin TestCalculator-testil
 
 ### Testauskattavuus
 
-Sovelluksen testauksen haarautumakattavuus on 94%. 
+Sovelluksen testauksen kattavuus on 94%. 
 
-![testauskuva](https://i.imgur.com/lAyhW6i.png)
+![testauskuva](https://i.imgur.com/nsJQv4L.png)
 
 Testien ulkopuolelle jäivät sovelluksen käynnistyksestä ja käyttöliittymästä vastaavat tiedostot. 
 
