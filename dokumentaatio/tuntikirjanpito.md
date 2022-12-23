@@ -35,4 +35,5 @@
 | 21.12. | 4    | loogikan korjausta |
 | 22.12. | 0.5  | testausta |
 |        | 1    | pylint korjaus ja testausta |
-| yht    | 44   | | 
+| 23.12. | 1    | arkkitehtuurikuvauksen viimeistely |
+| yht    | 45   | | 

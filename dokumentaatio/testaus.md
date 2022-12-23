@@ -30,4 +30,4 @@ Testauksessa pyrittiin testaamaan jokainen metodi vähintään yhdellä tai usea
 
 ## Sovellukseen jääneet laatuongelmat
 
-Sovellus ei tuota "Syntax error" virheilmoitusta muutamissa tilanteissa, kuten esimerkiksi kun yritetään ottaa neliöjuuri negatiivisesta luvusta. Tämä ei kuitenkaan vaikuta laskimen toimintaan. 
+Sovellus ei tuota "Syntax error" virheilmoitusta muutamissa tilanteissa, kuten esimerkiksi kun yritetään ottaa neliöjuuri negatiivisesta luvusta. Tämä ei kuitenkaan vaikuta laskimen toimintaan.
