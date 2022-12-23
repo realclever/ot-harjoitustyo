@@ -46,7 +46,7 @@ Kun laskin käynnistetään ja halutaan suorittaa esimerkiksi 2 + 2 = 4 laskutoi
 
 ![laskinkuva](https://i.imgur.com/yfWdkjA.png)
 
-Käyttäjän painaessa painiketta 2, kutsutaan CalService luokan metodia `SetTotal`, tämän jälkeen käyttäjä painaa "+" painiketta, joka kutsuu metodia `Press`. Tämän jälkeen ensimmäinen sykli toistuu, jonka jälkeen käyttäjä painaa viimein painiketta "=", joka kutsuu metodia `equals_btn_func`. Tämän jälkeen `update_values` ja `update_second_values` metodit päivittävät lopullisen laskutoimituksen ja tuloksen riveille. Jokaisen metodin kutsumisen yhteydessä myös päivitetään laskimen rivit kyseiseillä metodeilla.  
+Käyttäjän painaessa painiketta 2, kutsutaan CalService luokan metodia `setTotal`, tämän jälkeen käyttäjä painaa "+" painiketta, joka kutsuu metodia `press`. Tämän jälkeen ensimmäinen sykli toistuu, jonka jälkeen käyttäjä painaa viimein painiketta "=", joka kutsuu metodia `equals_btn_func`. Tämän jälkeen `update_values` ja `update_second_values` metodit päivittävät lopullisen laskutoimituksen ja tuloksen riveille. Jokaisen metodin kutsumisen yhteydessä myös päivitetään laskimen rivit kyseiseillä metodeilla.  
 
 ### Virheellinen laskutoimitus
 
