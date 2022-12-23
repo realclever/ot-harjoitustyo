@@ -6,7 +6,7 @@ Sovelluksen rakenne noudattelee kaksitasoista arkkitehtuuria seuraavassa muodoss
 
 ![ark](https://i.imgur.com/c00F3td.png)
 
-Pakkaus UI huolehtii osittain käyttöliittymän komponenteista (näppäimet) ja niiden muodostamisesta sekä services pakkaus sisältää sovelluksen logiikan.
+Pakkaus _ui_ huolehtii osittain käyttöliittymän komponenteista (näppäimet) ja niiden muodostamisesta sekä _services_ pakkaus sisältää sovelluksen logiikan.
 
 ## Käyttöliittymä
 
@@ -23,7 +23,7 @@ Sovellus ei tallenna laskutoimituksia tai niiden tuloksia. Tämä voisi tosin to
 
 ## Sovelluslogiikka
 
-Sovelluslogiikka koostuu luokasta CalService, joka sisältää näppäimien matemaattisen loogikan ja komponenttien toteutuksen. Jokainen matemaattinen toiminto on toteutettu omana metodinaan ja ne toimivat toistensa kanssa vuorovaikutuksessa. Esimerkiksi ulkonäkökomponenttien toteutuksesta vastaavat metodit:
+Sovelluslogiikka koostuu luokasta `CalService`, joka sisältää näppäimien matemaattisen loogikan ja komponenttien toteutuksen. Jokainen matemaattinen toiminto on toteutettu omana metodinaan ja ne toimivat toistensa kanssa vuorovaikutuksessa. Esimerkiksi ulkonäkökomponenttien toteutuksesta vastaavat metodit:
 
 - `buttons_space()`
 - `screen_space()`
@@ -56,7 +56,7 @@ Jos käyttäjä yrittää suorittaa laskimella esimerkiksi klassisen nollalla ja
 
 ![laskinkuva](https://i.imgur.com/buxFCuo.png)
 
-Kaava on edellisen kohdan tapaan samanlainen, mutta nollalla jako heittää tässä tilanteessa poikkeuksen, joka tyhjentää laskimen apurivin ja asettaa päärivin arvoksi "Syntax error"  
+Kaava on edellisen kohdan tapaan samanlainen, mutta nollalla jako heittää tässä tilanteessa poikkeuksen, joka tyhjentää laskimen apurivin ja asettaa päärivin arvoksi "Syntax error".  
 
 ### Muut toiminnallisuudet
 
